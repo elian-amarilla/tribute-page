@@ -1,0 +1,275 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F2EADF;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2em;
+}
+h1{
+    color: #010D00;
+    margin: 1em 0;
+    font-family: 'Yellowtail', cursive;
+    font-size: 2.5em;
+    position: relative;
+}
+h1::after{
+    content: "";
+    border-left: 2px solid #000;
+    background-color: #F2EADF;
+    right: 0;
+    height: 100%;
+    position: absolute;
+    animation: maquina 4s infinite alternate steps(26);
+}
+
+
+.rombo:nth-child(4){
+    left: 10vw;
+}
+.rombo{
+    position: absolute;
+    width: 15em;
+    height: 15em;
+    background-color: #010D00;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: colorTicTac 3s ease-in infinite forwards;
+}
+.rombo:nth-child(2){
+    bottom: 10vh;
+    left: 10vw;
+}
+.rombo:nth-child(3){
+    right: 0;
+    top: calc(50vh - 15em + 13vh);
+    background-color: #f00;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    font-family: 'Yellowtail', cursive;
+    width: 100vw;
+    height: 5vh;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #BFBBB46F;
+    justify-content: center;
+    align-items: center;
+}
+header, footer{
+    user-select: none;
+}
+footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F2EADF;
+    height: 7vh;
+    background-color: #010D00;
+}
+footer section{
+    display: flex;
+}
+footer section img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    align-items: center;
+}
+#img-div{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+#image{
+    align-self: center;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 0 #010D00;
+    width: 60%;
+    height: auto;
+}
+#img-caption{
+    padding: 1em;
+    align-self:flex-end;
+}
+
+#tribute-info{
+    display: flex;
+    flex-direction: column;
+    margin: 5vh 0;
+    text-align: justify;
+}
+#tribute-info h3{
+    align-self: center;
+    margin-bottom: 1em;
+}
+#tribute-info li{
+    margin-bottom: 1em;
+}
+blockquote{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    box-shadow: 0px 0px 15px -3px #BFBBB4;  
+      
+}
+blockquote div{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    width: 100%;
+    height: 8em;
+    font-family: 'Yellowtail', cursive;
+    background-color: #010D00cc;
+    color: #F2EADF;
+    align-self: center;
+    user-select: none;
+}
+blockquote div p{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+blockquote p:hover{
+    animation: resize 1s infinite forwards;
+}
+blockquote cite{
+    align-self: flex-end;
+    margin-top: .5em;
+}
+
+#tribute-info > p{
+    margin-top: 1.5em;
+}
+
+.foot-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1em;
+    background-color: #F2EADF;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.foot-div:hover{
+    background-color: #BFBBB4;
+    transition: .6s background;
+}
+
+@keyframes colorTicTac{
+    0%{
+        background-color: #010D00;
+    }
+    25%{
+        background-color: transparent;
+    }
+    50%{
+        background-color: #BFBBB4;
+    }
+    75%{
+        background-color: transparent;
+    }
+    100%{
+        background-color: #010D00;
+    }
+}
+
+@keyframes resize{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+@keyframes maquina{
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+}
+
+@media only screen and (max-width: 1639px){
+    .rombo:nth-child(2), .rombo:nth-child(4){
+        left: 1em;
+    }
+}
+@media only screen and (max-width: 1343px){
+    .rombo{
+        width: 10em;
+        height: 10em;
+    }
+}
+@media only screen and (max-width: 1170px){
+    .rombo{
+        visibility: hidden;
+    }
+}
+@media only screen and (max-width: 800px){
+    #tribute-info{
+        padding: 2.5em;
+    }
+    blockquote div p{
+        padding: 0 2em;
+        font-size: 1em;
+    }
+}
+@media only screen and (max-width: 510px){
+    h1{
+        font-size: 1.7em;
+    }
+
+}
+@media only screen and (max-width: 360px){
+    h1{
+        font-size: 1.4em;
+    }
+}
+@media only screen and (max-width: 295px){
+    h1{
+        font-size: 1.2em;
+    }
+    header{
+        font-size: 1em;
+    }
+}
+@media only screen and (max-width: 295px){
+    h1{
+        font-size: 1em;
+    }
+    header{
+        font-size: .8em;
+    }
+}
+@media only screen and (max-height: 880px){
+    footer{
+        height: fit-content;
+        padding: 10px;
+    }
+    
+}
+/* #0D0D0D
+#F2EADF
+#BFBBB4
+#8C8881
+#010D00 */
